@@ -171,6 +171,17 @@ ol[role="list"] {
   color: var(--color-on-accent);
 }
 
+.i18n-pending body {
+  opacity: 0;
+  animation: i18n-failsafe 0s 1.5s forwards;
+}
+
+@keyframes i18n-failsafe {
+  to {
+    opacity: 1;
+  }
+}
+
 .container {
   width: min(100% - 2 * var(--gutter), var(--container-max));
   margin-inline: auto;

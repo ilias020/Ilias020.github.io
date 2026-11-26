@@ -3,9 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ilias Merbout · Full-stack developer</title>
-    <meta name="description" content="Full-stack developer uit Amsterdam. Backends met Node.js, Express en FastAPI, frontends met React, Next.js en Angular, met interesse in AI en cloud.">
+    <title data-i18n="meta.title">Ilias Merbout · Full-stack developer</title>
+    <meta name="description" content="Full-stack developer uit Amsterdam. Backends met Node.js, Express en FastAPI, frontends met React, Next.js en Angular, met interesse in AI en cloud." data-i18n-attr="content:meta.description">
     <meta name="theme-color" content="#f1f0eb">
+    <script>
+      try {
+        if (localStorage.getItem("lang") === "en") {
+          document.documentElement.lang = "en";
+          document.documentElement.classList.add("i18n-pending");
+        }
+      } catch (error) {}
+    </script>
     <link rel="preload" href="assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/tokens.css">
@@ -16,7 +24,7 @@
     <script type="module" src="js/main.js"></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Naar de inhoud</a>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Naar de inhoud</a>
 
     <header class="site-header" data-site-header>
       <div class="container site-header__inner">
@@ -25,27 +33,27 @@
           <span class="brand__name">Ilias Merbout<span class="brand__dot">.</span></span>
         </a>
 
-        <nav class="site-nav" aria-label="Hoofdnavigatie" data-site-nav>
+        <nav class="site-nav" aria-label="Hoofdnavigatie" data-i18n-attr="aria-label:a11y.mainNav" data-site-nav>
           <div class="segmented" data-active="none">
             <span class="segmented__indicator" aria-hidden="true"></span>
             <ul class="segmented__items">
-              <li><a class="segmented__item" href="#werk">Werk</a></li>
-              <li><a class="segmented__item" href="#over-mij" data-nav-also="#reizen">Buiten werk</a></li>
-              <li><a class="segmented__item" href="#contact">Contact</a></li>
+              <li><a class="segmented__item" href="#werk" data-i18n="nav.work">Werk</a></li>
+              <li><a class="segmented__item" href="#over-mij" data-nav-also="#reizen" data-i18n="nav.life">Buiten werk</a></li>
+              <li><a class="segmented__item" href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
           </div>
         </nav>
 
         <div class="header-actions">
-          <a class="cv-link" href="assets/cv/cv-ilias-merbout-nl.pdf" download>
-            Cv
+          <a class="cv-link" href="assets/cv/cv-ilias-merbout-nl.pdf" download data-i18n-attr="href:nav.cvHref">
+            <span data-i18n="nav.cv">Cv</span>
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M18 13l-6 6-6-6"/></svg>
           </a>
-          <div class="segmented segmented--compact" role="group" aria-label="Taal">
+          <div class="segmented segmented--compact" role="group" aria-label="Taal" data-i18n-attr="aria-label:a11y.language" data-lang-switch>
             <span class="segmented__indicator" aria-hidden="true"></span>
             <div class="segmented__items">
-              <button class="segmented__item" type="button" aria-pressed="true">NL</button>
-              <button class="segmented__item" type="button" aria-pressed="false" lang="en">EN</button>
+              <button class="segmented__item" type="button" aria-pressed="true" data-lang="nl" lang="nl">NL</button>
+              <button class="segmented__item" type="button" aria-pressed="false" data-lang="en" lang="en">EN</button>
             </div>
           </div>
         </div>
@@ -59,26 +67,26 @@
           <ul class="hero__tags" role="list">
             <li class="tag">
               <svg class="icon tag__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>
-              Full-stack
+              <span data-i18n="hero.tags.fullstack">Full-stack</span>
             </li>
             <li class="tag">
               <svg class="icon tag__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
-              Backend
+              <span data-i18n="hero.tags.backend">Backend</span>
             </li>
             <li class="tag">
               <svg class="icon tag__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 10.5 16M16 7.5 13.5 16M8.5 6h7"/></svg>
-              AI
+              <span data-i18n="hero.tags.ai">AI</span>
             </li>
             <li class="tag">
               <svg class="icon tag__icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.5"/><path d="M4.5 5.5v13c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-13"/><path d="M4.5 12c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5"/></svg>
-              Data
+              <span data-i18n="hero.tags.data">Data</span>
             </li>
           </ul>
-          <h1 id="hero-title" class="hero__title">Ik bouw software van <span class="accent">database</span> tot <span class="accent">interface.</span></h1>
-          <p class="hero__intro">Full-stack developer uit Amsterdam met een afgeronde HBO AD Software Development. Backends met Node.js, Express en FastAPI, frontends met React, Next.js en Angular. Mijn interesse ligt bij AI en cloud.</p>
+          <h1 id="hero-title" class="hero__title" data-i18n-html="hero.title">Ik bouw software van <span class="accent">database</span> tot <span class="accent">interface.</span></h1>
+          <p class="hero__intro" data-i18n="hero.intro">Full-stack developer uit Amsterdam met een afgeronde HBO AD Software Development. Backends met Node.js, Express en FastAPI, frontends met React, Next.js en Angular. Mijn interesse ligt bij AI en cloud.</p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#werk">Bekijk mijn werk</a>
-            <a class="btn btn--outline" href="mailto:ilias.merbout2004@gmail.com">Neem contact op</a>
+            <a class="btn btn--primary" href="#werk" data-i18n="hero.ctaWork">Bekijk mijn werk</a>
+            <a class="btn btn--outline" href="mailto:ilias.merbout2004@gmail.com" data-i18n="hero.ctaContact">Neem contact op</a>
           </div>
         </div>
       </section>
@@ -86,11 +94,11 @@
       <section id="werk" class="work" aria-labelledby="work-title">
         <div class="container">
           <div class="section-head section-head--center" data-reveal>
-            <p class="kicker">Uitgelicht werk</p>
-            <h2 id="work-title" class="section-head__title">Projecten waar ik <span class="accent">trots</span> op ben</h2>
+            <p class="kicker" data-i18n="work.kicker">Uitgelicht werk</p>
+            <h2 id="work-title" class="section-head__title" data-i18n-html="work.title">Projecten waar ik <span class="accent">trots</span> op ben</h2>
           </div>
 
-          <div class="project-tabs" role="tablist" aria-label="Projecten" data-project-tabs>
+          <div class="project-tabs" role="tablist" aria-label="Projecten" data-i18n-attr="aria-label:a11y.projects" data-project-tabs>
             <button class="project-card" data-reveal type="button" role="tab" id="tab-nimbus" aria-selected="true" aria-controls="panel-nimbus">
               <span class="project-card__stage">
                 <span class="device laptop">
@@ -101,7 +109,7 @@
               <span class="project-card__meta">
                 <span class="project-card__text">
                   <span class="project-card__title">Nimbus</span>
-                  <span class="project-card__subtitle">AI-klantenservice als SaaS</span>
+                  <span class="project-card__subtitle" data-i18n="projects.nimbus.subtitle">AI-klantenservice als SaaS</span>
                 </span>
                 <span class="project-card__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </span>
@@ -117,7 +125,7 @@
               <span class="project-card__meta">
                 <span class="project-card__text">
                   <span class="project-card__title">Document Pipeline</span>
-                  <span class="project-card__subtitle">Lokale RAG met OCR</span>
+                  <span class="project-card__subtitle" data-i18n="projects.pipeline.subtitle">Lokale RAG met OCR</span>
                 </span>
                 <span class="project-card__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </span>
@@ -131,8 +139,8 @@
               </span>
               <span class="project-card__meta">
                 <span class="project-card__text">
-                  <span class="project-card__title">PBN Voorraad</span>
-                  <span class="project-card__subtitle">Afstudeerstage · mobiel</span>
+                  <span class="project-card__title" data-i18n="projects.pbn.cardTitle">PBN Voorraad</span>
+                  <span class="project-card__subtitle" data-i18n="projects.pbn.subtitle">Afstudeerstage · mobiel</span>
                 </span>
                 <span class="project-card__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </span>
@@ -148,7 +156,7 @@
               <span class="project-card__meta">
                 <span class="project-card__text">
                   <span class="project-card__title">AvenNex</span>
-                  <span class="project-card__subtitle">Cloud · in ontwikkeling</span>
+                  <span class="project-card__subtitle" data-i18n="projects.avennex.subtitle">Cloud · in ontwikkeling</span>
                 </span>
                 <span class="project-card__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </span>
@@ -160,24 +168,24 @@
               <div class="project-panel__media">
                 <div class="device-group">
                   <div class="device laptop laptop--large">
-                    <div class="laptop__screen"><img src="assets/projecten/nimbus-laptop.webp" alt="Dashboard van Nimbus" width="1800" height="1125" loading="lazy" decoding="async"></div>
+                    <div class="laptop__screen"><img src="assets/projecten/nimbus-laptop.webp" alt="Dashboard van Nimbus" width="1800" height="1125" loading="lazy" decoding="async" data-i18n-attr="alt:projects.nimbus.alt.laptop"></div>
                     <div class="laptop__base"></div>
                   </div>
                   <div class="device phone phone--overlay">
-                    <img src="assets/projecten/nimbus-phone.webp" alt="Mobiele weergave van het Nimbus-dashboard" width="608" height="1317" loading="lazy" decoding="async">
+                    <img src="assets/projecten/nimbus-phone.webp" alt="Mobiele weergave van het Nimbus-dashboard" width="608" height="1317" loading="lazy" decoding="async" data-i18n-attr="alt:projects.nimbus.alt.phone">
                   </div>
                 </div>
               </div>
               <div class="project-panel__body">
-                <p class="kicker kicker--on-dark">Persoonlijk project · SaaS · AI</p>
+                <p class="kicker kicker--on-dark" data-i18n="projects.nimbus.kicker">Persoonlijk project · SaaS · AI</p>
                 <h3 class="project-panel__title">Nimbus</h3>
-                <p class="project-panel__text">SaaS-platform waarmee bedrijven een AI-chatbot inzetten die klantvragen beantwoordt. Van documentatie en ontwerp tot implementatie en tests.</p>
-                <ul class="stack" role="list" aria-label="Gebruikte technieken">
+                <p class="project-panel__text" data-i18n="projects.nimbus.text">SaaS-platform waarmee bedrijven een AI-chatbot inzetten die klantvragen beantwoordt. Van documentatie en ontwerp tot implementatie en tests.</p>
+                <ul class="stack" role="list" aria-label="Gebruikte technieken" data-i18n-attr="aria-label:a11y.stack">
                   <li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>FastAPI</li><li>PostgreSQL</li><li>pgvector</li><li>Alembic</li><li>Claude API</li><li>Docker</li>
                 </ul>
                 <div class="project-panel__actions">
-                  <a class="btn btn--light" href="https://github.com/ilias020/Ai-customer-support-platform">Bekijk op GitHub <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-                  <button class="text-button" type="button" aria-haspopup="dialog" aria-controls="modal-nimbus" data-modal-open>Bekijk groot en meer details <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  <a class="btn btn--light" href="https://github.com/ilias020/Ai-customer-support-platform"><span data-i18n="work.github">Bekijk op GitHub</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                  <button class="text-button" type="button" aria-haspopup="dialog" aria-controls="modal-nimbus" data-modal-open><span data-i18n="work.details">Bekijk groot en meer details</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
                 </div>
               </div>
             </div>
@@ -185,20 +193,20 @@
             <div class="project-panel" role="tabpanel" id="panel-pipeline" aria-labelledby="tab-pipeline" hidden>
               <div class="project-panel__media">
                 <div class="device laptop laptop--large">
-                  <div class="laptop__screen"><img src="assets/projecten/pipeline-laptop.webp" alt="Samenvatting van een liftinspectierapport met de acht stappen van de pipeline" width="1580" height="988" loading="lazy" decoding="async"></div>
+                  <div class="laptop__screen"><img src="assets/projecten/pipeline-laptop.webp" alt="Samenvatting van een liftinspectierapport met de acht stappen van de pipeline" width="1580" height="988" loading="lazy" decoding="async" data-i18n-attr="alt:projects.pipeline.alt.summary"></div>
                   <div class="laptop__base"></div>
                 </div>
               </div>
               <div class="project-panel__body">
-                <p class="kicker kicker--on-dark">Proof of concept · RAG · OCR</p>
+                <p class="kicker kicker--on-dark" data-i18n="projects.pipeline.kicker">Proof of concept · RAG · OCR</p>
                 <h3 class="project-panel__title">Document Processing Pipeline</h3>
-                <p class="project-panel__text">Lokale RAG-pipeline die gescande inspectierapporten met OCR uitleest, samenvat en doorzoekbaar maakt, met bronverwijzingen. Gebouwd voor Your Data Company.</p>
-                <ul class="stack" role="list" aria-label="Gebruikte technieken">
+                <p class="project-panel__text" data-i18n="projects.pipeline.text">Lokale RAG-pipeline die gescande inspectierapporten met OCR uitleest, samenvat en doorzoekbaar maakt, met bronverwijzingen. Gebouwd voor Your Data Company.</p>
+                <ul class="stack" role="list" aria-label="Gebruikte technieken" data-i18n-attr="aria-label:a11y.stack">
                   <li>Python</li><li>FastAPI</li><li>Pydantic</li><li>React</li><li>Vite</li><li>SQLite</li><li>Tesseract</li><li>Ollama</li><li>Gemma 3</li><li>ChromaDB</li>
                 </ul>
                 <div class="project-panel__actions">
-                  <p class="project-panel__status">Privérepository</p>
-                  <button class="text-button" type="button" aria-haspopup="dialog" aria-controls="modal-pipeline" data-modal-open>Bekijk groot en meer details <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  <p class="project-panel__status" data-i18n="work.private">Privérepository</p>
+                  <button class="text-button" type="button" aria-haspopup="dialog" aria-controls="modal-pipeline" data-modal-open><span data-i18n="work.details">Bekijk groot en meer details</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
                 </div>
               </div>
             </div>
@@ -206,19 +214,19 @@
             <div class="project-panel" role="tabpanel" id="panel-pbn" aria-labelledby="tab-pbn" hidden>
               <div class="project-panel__media">
                 <div class="device phone phone--large">
-                  <img src="assets/projecten/pbn.webp" alt="Startscherm van de PBN-voorraadapp" width="368" height="800" loading="lazy" decoding="async">
+                  <img src="assets/projecten/pbn.webp" alt="Startscherm van de PBN-voorraadapp" width="368" height="800" loading="lazy" decoding="async" data-i18n-attr="alt:projects.pbn.alt.home">
                 </div>
               </div>
               <div class="project-panel__body">
-                <p class="kicker kicker--on-dark">Afstudeerstage · mobiel</p>
-                <h3 class="project-panel__title">PBN Voorraadbeheer</h3>
-                <p class="project-panel__text">Mobiele app waarmee medewerkers per locatie voorraad doorgeven, met QR-scanner, productdatabase, statusoverzicht en adminpanel. Met z'n tweeën vanaf nul gebouwd.</p>
-                <ul class="stack" role="list" aria-label="Gebruikte technieken">
+                <p class="kicker kicker--on-dark" data-i18n="projects.pbn.kicker">Afstudeerstage · mobiel</p>
+                <h3 class="project-panel__title" data-i18n="projects.pbn.title">PBN Voorraadbeheer</h3>
+                <p class="project-panel__text" data-i18n="projects.pbn.text">Mobiele app waarmee medewerkers per locatie voorraad doorgeven, met QR-scanner, productdatabase, statusoverzicht en adminpanel. Met z'n tweeën vanaf nul gebouwd.</p>
+                <ul class="stack" role="list" aria-label="Gebruikte technieken" data-i18n-attr="aria-label:a11y.stack">
                   <li>React Native (Expo)</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>MySQL</li><li>JWT</li><li>Figma</li>
                 </ul>
                 <div class="project-panel__actions">
-                  <p class="project-panel__status">Privérepository</p>
-                  <button class="text-button" type="button" aria-haspopup="dialog" aria-controls="modal-pbn" data-modal-open>Bekijk groot en meer details <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  <p class="project-panel__status" data-i18n="work.private">Privérepository</p>
+                  <button class="text-button" type="button" aria-haspopup="dialog" aria-controls="modal-pbn" data-modal-open><span data-i18n="work.details">Bekijk groot en meer details</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
                 </div>
               </div>
             </div>
@@ -226,27 +234,27 @@
             <div class="project-panel" role="tabpanel" id="panel-avennex" aria-labelledby="tab-avennex" hidden>
               <div class="project-panel__media">
                 <div class="device laptop laptop--large">
-                  <div class="laptop__screen laptop__screen--center"><img src="assets/projecten/avennex.webp" alt="Cloudarchitectuur van AvenNex Ember op Azure" width="1600" height="1000" loading="lazy" decoding="async"></div>
+                  <div class="laptop__screen laptop__screen--center"><img src="assets/projecten/avennex.webp" alt="Cloudarchitectuur van AvenNex Ember op Azure" width="1600" height="1000" loading="lazy" decoding="async" data-i18n-attr="alt:projects.avennex.alt.architecture"></div>
                   <div class="laptop__base"></div>
                 </div>
               </div>
               <div class="project-panel__body">
-                <p class="kicker kicker--on-dark">Teamproject · in ontwikkeling</p>
+                <p class="kicker kicker--on-dark" data-i18n="projects.avennex.kicker">Teamproject · in ontwikkeling</p>
                 <h3 class="project-panel__title">AvenNex</h3>
-                <p class="project-panel__text">Cloudplatform op Azure dat sensordata van batterijen verwerkt om brandrisico vroeg te signaleren. Als cloud engineer beheer ik de infrastructuur als code met Terraform.</p>
-                <ul class="stack" role="list" aria-label="Gebruikte technieken">
+                <p class="project-panel__text" data-i18n="projects.avennex.text">Cloudplatform op Azure dat sensordata van batterijen verwerkt om brandrisico vroeg te signaleren. Als cloud engineer beheer ik de infrastructuur als code met Terraform.</p>
+                <ul class="stack" role="list" aria-label="Gebruikte technieken" data-i18n-attr="aria-label:a11y.stack">
                   <li>Azure IoT Hub</li><li>Azure Functions</li><li>PostgreSQL</li><li>Key Vault</li><li>Python</li><li>Terraform</li><li>CI/CD</li>
                 </ul>
                 <div class="project-panel__actions">
-                  <p class="project-panel__status">Volgt binnenkort</p>
-                  <button class="text-button" type="button" aria-haspopup="dialog" aria-controls="modal-avennex" data-modal-open>Bekijk groot en meer details <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  <p class="project-panel__status" data-i18n="work.soon">Volgt binnenkort</p>
+                  <button class="text-button" type="button" aria-haspopup="dialog" aria-controls="modal-avennex" data-modal-open><span data-i18n="work.details">Bekijk groot en meer details</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="work__more" data-reveal>
-            <a class="btn btn--outline" href="https://github.com/ilias020?tab=repositories">Bekijk meer projecten op GitHub <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn btn--outline" href="https://github.com/ilias020?tab=repositories"><span data-i18n="work.more">Bekijk meer projecten op GitHub</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </div>
         </div>
       </section>
@@ -255,18 +263,18 @@
         <div class="container">
           <div class="about__intro">
             <figure class="about__portrait" data-reveal>
-              <img src="assets/portret/portret-over-mij.webp" alt="Portret van Ilias Merbout" width="960" height="1200" loading="lazy" decoding="async">
+              <img src="assets/portret/portret-over-mij.webp" alt="Portret van Ilias Merbout" width="960" height="1200" loading="lazy" decoding="async" data-i18n-attr="alt:about.portraitAlt">
               <figcaption class="about__badge">
-                <span class="about__badge-title">Voetbal</span>
-                <span class="about__badge-text">van de mini's tot mijn 16e</span>
+                <span class="about__badge-title" data-i18n="about.badgeTitle">Voetbal</span>
+                <span class="about__badge-text" data-i18n="about.badgeText">van de mini's tot mijn 16e</span>
               </figcaption>
             </figure>
             <div class="about__body" data-reveal>
-              <p class="kicker">Over mij</p>
-              <h2 id="about-title" class="section-head__title">Wie ik ben, <span class="accent">buiten de code</span></h2>
-              <p>Ik ben Ilias, ik woon in Amsterdam en ik werk het liefst aan software die echt gebruikt wordt. Wat ik op het werk doe, begon eigenlijk op het voetbalveld.</p>
-              <p>Op mijn vierde stond ik voor het eerst bij de mini's van AVV Zeeburgia op het veld, en ik bleef voetballen tot mijn zestiende. Wat ik daar leerde, zie ik nu in elk team terug: je wint samen, je zegt het als iets niet goed gaat en je komt ook opdagen als het regent.</p>
-              <p>Tegenwoordig train ik drie à vier keer per week in de sportschool, met een PPL-schema: push, pull en legs. Af en toe speel ik padel met een vriend, soms met z'n vieren, puur voor de lol. Ik lees graag, van Harry Potter tot het nieuws, en in mijn vrije tijd experimenteer ik met lokale LLM's.</p>
+              <p class="kicker" data-i18n="about.kicker">Over mij</p>
+              <h2 id="about-title" class="section-head__title" data-i18n-html="about.title">Wie ik ben, <span class="accent">buiten de code</span></h2>
+              <p data-i18n="about.paragraphs.0">Ik ben Ilias, ik woon in Amsterdam en ik werk het liefst aan software die echt gebruikt wordt. Wat ik op het werk doe, begon eigenlijk op het voetbalveld.</p>
+              <p data-i18n="about.paragraphs.1">Op mijn vierde stond ik voor het eerst bij de mini's van AVV Zeeburgia op het veld, en ik bleef voetballen tot mijn zestiende. Wat ik daar leerde, zie ik nu in elk team terug: je wint samen, je zegt het als iets niet goed gaat en je komt ook opdagen als het regent.</p>
+              <p data-i18n="about.paragraphs.2">Tegenwoordig train ik drie à vier keer per week in de sportschool, met een PPL-schema: push, pull en legs. Af en toe speel ik padel met een vriend, soms met z'n vieren, puur voor de lol. Ik lees graag, van Harry Potter tot het nieuws, en in mijn vrije tijd experimenteer ik met lokale LLM's.</p>
             </div>
           </div>
 
@@ -275,66 +283,66 @@
               <div class="hobby-card__media">
                 <svg class="hobby-card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7.5 4.3 3.1-1.6 5H9.3l-1.6-5z"/><path d="M12 7.5V3M16.3 10.6l4.3-1.4M14.7 15.6l2.6 3.7M9.3 15.6l-2.6 3.7M7.7 10.6 3.4 9.2"/></svg>
               </div>
-              <h3 class="hobby-card__title">Voetbal</h3>
-              <p class="hobby-card__text">Bij AVV Zeeburgia, van 4 tot 16 jaar</p>
+              <h3 class="hobby-card__title" data-i18n="hobbies.football.title">Voetbal</h3>
+              <p class="hobby-card__text" data-i18n="hobbies.football.text">Bij AVV Zeeburgia, van 4 tot 16 jaar</p>
             </li>
             <li class="hobby-card" data-reveal>
               <div class="hobby-card__media">
                 <svg class="hobby-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg>
               </div>
-              <h3 class="hobby-card__title">Fitness</h3>
-              <p class="hobby-card__text">Krachttraining, 3 à 4 keer per week</p>
+              <h3 class="hobby-card__title" data-i18n="hobbies.fitness.title">Fitness</h3>
+              <p class="hobby-card__text" data-i18n="hobbies.fitness.text">Krachttraining, 3 à 4 keer per week</p>
             </li>
             <li class="hobby-card" data-reveal>
               <div class="hobby-card__media">
                 <svg class="hobby-card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="9" r="6"/><path d="m14.3 13.3 5.7 5.7"/><circle cx="19" cy="5" r="1.5"/><path d="M8 7h.01M12 7h.01M10 9.5h.01M8 12h.01M12 12h.01"/></svg>
               </div>
-              <h3 class="hobby-card__title">Padel</h3>
-              <p class="hobby-card__text">Met vrienden, puur voor de lol</p>
+              <h3 class="hobby-card__title" data-i18n="hobbies.padel.title">Padel</h3>
+              <p class="hobby-card__text" data-i18n="hobbies.padel.text">Met vrienden, puur voor de lol</p>
             </li>
             <li class="hobby-card" data-reveal>
               <div class="hobby-card__media">
                 <svg class="hobby-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5c3-1 6-1 9 1 3-2 6-2 9-1v13c-3-1-6-1-9 1-3-2-6-2-9-1z"/><path d="M12 6.5v13"/></svg>
               </div>
-              <h3 class="hobby-card__title">Lezen</h3>
-              <p class="hobby-card__text">Harry Potter en het nieuws</p>
+              <h3 class="hobby-card__title" data-i18n="hobbies.reading.title">Lezen</h3>
+              <p class="hobby-card__text" data-i18n="hobbies.reading.text">Harry Potter en het nieuws</p>
             </li>
           </ul>
         </div>
       </section>
 
-      <section id="reizen" class="travel" aria-label="Reizen"></section>
+      <section id="reizen" class="travel" aria-label="Reizen" data-i18n-attr="aria-label:a11y.travel"></section>
     </main>
 
     <dialog class="modal" id="modal-nimbus" aria-labelledby="modal-nimbus-title">
       <div class="modal__inner">
-        <button class="modal__close" type="button" aria-label="Sluiten" data-modal-close><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <button class="modal__close" type="button" aria-label="Sluiten" data-i18n-attr="aria-label:a11y.close" data-modal-close><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
         <div class="modal__head">
-          <p class="kicker">Persoonlijk project · SaaS · AI</p>
+          <p class="kicker" data-i18n="projects.nimbus.kicker">Persoonlijk project · SaaS · AI</p>
           <h2 id="modal-nimbus-title" class="modal__title">Nimbus</h2>
         </div>
         <figure class="shot">
-          <img src="assets/projecten/nimbus-full.webp" alt="Volledig dashboard van Nimbus" width="1800" height="1820" loading="lazy" decoding="async">
-          <figcaption>Dashboard op desktop, ontworpen in Figma en één op één gebouwd</figcaption>
+          <img src="assets/projecten/nimbus-full.webp" alt="Volledig dashboard van Nimbus" width="1800" height="1820" loading="lazy" decoding="async" data-i18n-attr="alt:projects.nimbus.alt.full">
+          <figcaption data-i18n="projects.nimbus.captions.0">Dashboard op desktop, ontworpen in Figma en één op één gebouwd</figcaption>
         </figure>
         <figure class="shot shot--narrow">
-          <img src="assets/projecten/nimbus-phone.webp" alt="Mobiele weergave van het Nimbus-dashboard" width="608" height="1317" loading="lazy" decoding="async">
-          <figcaption>Hetzelfde dashboard op mobiel</figcaption>
+          <img src="assets/projecten/nimbus-phone.webp" alt="Mobiele weergave van het Nimbus-dashboard" width="608" height="1317" loading="lazy" decoding="async" data-i18n-attr="alt:projects.nimbus.alt.phone">
+          <figcaption data-i18n="projects.nimbus.captions.1">Hetzelfde dashboard op mobiel</figcaption>
         </figure>
         <div class="modal__details">
           <div class="modal__built">
-            <h3 class="modal__subhead">Wat ik heb gebouwd</h3>
+            <h3 class="modal__subhead" data-i18n="work.built">Wat ik heb gebouwd</h3>
             <ul class="modal__list">
-              <li>Productvisie, requirements, roadmap en een complete projectdocumentatie: architectuur, API-ontwerp, databaseontwerp en security</li>
-              <li>Een eigen design system en alle schermen in Figma, voor desktop, tablet en mobiel</li>
-              <li>Een backend met FastAPI en PostgreSQL (met pgvector), databasemigraties met Alembic</li>
-              <li>Een AI-chatbot die vragen beantwoordt op basis van de kennisbank van een bedrijf, met de Claude API</li>
-              <li>Tests op drie niveaus (unit, integratie en end-to-end) met Pytest en Vitest, en CI/CD via GitHub Actions</li>
+              <li data-i18n="projects.nimbus.built.0">Productvisie, requirements, roadmap en een complete projectdocumentatie: architectuur, API-ontwerp, databaseontwerp en security</li>
+              <li data-i18n="projects.nimbus.built.1">Een eigen design system en alle schermen in Figma, voor desktop, tablet en mobiel</li>
+              <li data-i18n="projects.nimbus.built.2">Een backend met FastAPI en PostgreSQL (met pgvector), databasemigraties met Alembic</li>
+              <li data-i18n="projects.nimbus.built.3">Een AI-chatbot die vragen beantwoordt op basis van de kennisbank van een bedrijf, met de Claude API</li>
+              <li data-i18n="projects.nimbus.built.4">Tests op drie niveaus (unit, integratie en end-to-end) met Pytest en Vitest, en CI/CD via GitHub Actions</li>
             </ul>
           </div>
           <div class="modal__role">
-            <h3 class="modal__subhead">Mijn rol</h3>
-            <p>Alles: van idee en ontwerp tot code en tests. Een persoonlijk project om te laten zien dat ik een volledig SaaS-product kan ontwerpen, documenteren en bouwen.</p>
+            <h3 class="modal__subhead" data-i18n="work.role">Mijn rol</h3>
+            <p data-i18n="projects.nimbus.role">Alles: van idee en ontwerp tot code en tests. Een persoonlijk project om te laten zien dat ik een volledig SaaS-product kan ontwerpen, documenteren en bouwen.</p>
           </div>
         </div>
       </div>
@@ -342,41 +350,41 @@
 
     <dialog class="modal" id="modal-pipeline" aria-labelledby="modal-pipeline-title">
       <div class="modal__inner">
-        <button class="modal__close" type="button" aria-label="Sluiten" data-modal-close><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <button class="modal__close" type="button" aria-label="Sluiten" data-i18n-attr="aria-label:a11y.close" data-modal-close><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
         <div class="modal__head">
-          <p class="kicker">Proof of concept · RAG · OCR</p>
+          <p class="kicker" data-i18n="projects.pipeline.kicker">Proof of concept · RAG · OCR</p>
           <h2 id="modal-pipeline-title" class="modal__title">Document Processing Pipeline</h2>
         </div>
         <figure class="shot">
-          <img src="assets/projecten/pipeline-summary.webp" alt="Samenvatting van een liftinspectierapport met de acht stappen van de pipeline" width="1901" height="910" loading="lazy" decoding="async">
-          <figcaption>Links de acht stappen van de pipeline, rechts de samenvatting met bevindingen, acties en bronnummers</figcaption>
+          <img src="assets/projecten/pipeline-summary.webp" alt="Samenvatting van een liftinspectierapport met de acht stappen van de pipeline" width="1901" height="910" loading="lazy" decoding="async" data-i18n-attr="alt:projects.pipeline.alt.summary">
+          <figcaption data-i18n="projects.pipeline.captions.0">Links de acht stappen van de pipeline, rechts de samenvatting met bevindingen, acties en bronnummers</figcaption>
         </figure>
         <figure class="shot">
-          <img src="assets/projecten/pipeline-vragen.webp" alt="Vraag over een rapport met antwoord en paginabron" width="1597" height="910" loading="lazy" decoding="async">
-          <figcaption>Een vraag over het rapport, beantwoord met een verwijzing naar de pagina</figcaption>
+          <img src="assets/projecten/pipeline-vragen.webp" alt="Vraag over een rapport met antwoord en paginabron" width="1597" height="910" loading="lazy" decoding="async" data-i18n-attr="alt:projects.pipeline.alt.questions">
+          <figcaption data-i18n="projects.pipeline.captions.1">Een vraag over het rapport, beantwoord met een verwijzing naar de pagina</figcaption>
         </figure>
         <figure class="shot">
-          <img src="assets/projecten/pipeline-ocr.webp" alt="Tekst die met OCR uit een gescand rapport is gehaald" width="1596" height="910" loading="lazy" decoding="async">
-          <figcaption>Een gescand rapport: de tekst is met OCR uit de afbeelding gehaald</figcaption>
+          <img src="assets/projecten/pipeline-ocr.webp" alt="Tekst die met OCR uit een gescand rapport is gehaald" width="1596" height="910" loading="lazy" decoding="async" data-i18n-attr="alt:projects.pipeline.alt.ocr">
+          <figcaption data-i18n="projects.pipeline.captions.2">Een gescand rapport: de tekst is met OCR uit de afbeelding gehaald</figcaption>
         </figure>
         <figure class="shot">
-          <img src="assets/projecten/pipeline-overzicht.webp" alt="Overzicht van verwerkte inspectierapporten" width="1580" height="577" loading="lazy" decoding="async">
-          <figcaption>Het overzicht van verwerkte rapporten, waarvan twee gescand en via OCR uitgelezen</figcaption>
+          <img src="assets/projecten/pipeline-overzicht.webp" alt="Overzicht van verwerkte inspectierapporten" width="1580" height="577" loading="lazy" decoding="async" data-i18n-attr="alt:projects.pipeline.alt.overview">
+          <figcaption data-i18n="projects.pipeline.captions.3">Het overzicht van verwerkte rapporten, waarvan twee gescand en via OCR uitgelezen</figcaption>
         </figure>
         <div class="modal__details">
           <div class="modal__built">
-            <h3 class="modal__subhead">Wat ik heb gebouwd</h3>
+            <h3 class="modal__subhead" data-i18n="work.built">Wat ik heb gebouwd</h3>
             <ul class="modal__list">
-              <li>Een pipeline in acht stappen: validatie, tekstextractie met OCR, chunking, embeddings, opslag, retrieval, samenvatting en bronvalidatie</li>
-              <li>OCR met Tesseract (Nederlands en Engels) voor gescande rapporten</li>
-              <li>Samenvattingen en antwoorden met Gemma 3, lokaal via Ollama, zonder API-sleutel of gebruikskosten</li>
-              <li>Vragen stellen over een rapport, met een paginabron bij elk antwoord</li>
-              <li>Getest met pytest, Ruff en mypy in de backend en ESLint en TypeScript in de frontend</li>
+              <li data-i18n="projects.pipeline.built.0">Een pipeline in acht stappen: validatie, tekstextractie met OCR, chunking, embeddings, opslag, retrieval, samenvatting en bronvalidatie</li>
+              <li data-i18n="projects.pipeline.built.1">OCR met Tesseract (Nederlands en Engels) voor gescande rapporten</li>
+              <li data-i18n="projects.pipeline.built.2">Samenvattingen en antwoorden met Gemma 3, lokaal via Ollama, zonder API-sleutel of gebruikskosten</li>
+              <li data-i18n="projects.pipeline.built.3">Vragen stellen over een rapport, met een paginabron bij elk antwoord</li>
+              <li data-i18n="projects.pipeline.built.4">Getest met pytest, Ruff en mypy in de backend en ESLint en TypeScript in de frontend</li>
             </ul>
           </div>
           <div class="modal__role">
-            <h3 class="modal__subhead">Mijn rol</h3>
-            <p>Opdracht voor een meeloopdag bij Your Data Company: binnen een dag een werkend proof of concept bouwen, van ontwerp tot geteste code.</p>
+            <h3 class="modal__subhead" data-i18n="work.role">Mijn rol</h3>
+            <p data-i18n="projects.pipeline.role">Opdracht voor een meeloopdag bij Your Data Company: binnen een dag een werkend proof of concept bouwen, van ontwerp tot geteste code.</p>
           </div>
         </div>
       </div>
@@ -384,29 +392,29 @@
 
     <dialog class="modal" id="modal-pbn" aria-labelledby="modal-pbn-title">
       <div class="modal__inner">
-        <button class="modal__close" type="button" aria-label="Sluiten" data-modal-close><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <button class="modal__close" type="button" aria-label="Sluiten" data-i18n-attr="aria-label:a11y.close" data-modal-close><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
         <div class="modal__head">
-          <p class="kicker">Afstudeerstage · mobiel</p>
-          <h2 id="modal-pbn-title" class="modal__title">PBN Voorraadbeheer</h2>
+          <p class="kicker" data-i18n="projects.pbn.kicker">Afstudeerstage · mobiel</p>
+          <h2 id="modal-pbn-title" class="modal__title" data-i18n="projects.pbn.title">PBN Voorraadbeheer</h2>
         </div>
         <figure class="shot shot--narrow">
-          <img src="assets/projecten/pbn.webp" alt="Startscherm van de PBN-voorraadapp" width="368" height="800" loading="lazy" decoding="async">
-          <figcaption>Startscherm van de app</figcaption>
+          <img src="assets/projecten/pbn.webp" alt="Startscherm van de PBN-voorraadapp" width="368" height="800" loading="lazy" decoding="async" data-i18n-attr="alt:projects.pbn.alt.home">
+          <figcaption data-i18n="projects.pbn.captions.0">Startscherm van de app</figcaption>
         </figure>
         <div class="modal__details">
           <div class="modal__built">
-            <h3 class="modal__subhead">Wat ik heb gebouwd</h3>
+            <h3 class="modal__subhead" data-i18n="work.built">Wat ik heb gebouwd</h3>
             <ul class="modal__list">
-              <li>Voorraad doorgeven per locatie en project, met aantallen per product</li>
-              <li>Een QR-scanner om producten snel te herkennen, en handmatig zoeken als alternatief</li>
-              <li>Een overzicht van eerdere registraties met hun status</li>
-              <li>Een productdatabase met standaardverpakking en foto</li>
-              <li>Een adminpanel voor producten, gebruikers en rollen, met JWT-authenticatie in de backend</li>
+              <li data-i18n="projects.pbn.built.0">Voorraad doorgeven per locatie en project, met aantallen per product</li>
+              <li data-i18n="projects.pbn.built.1">Een QR-scanner om producten snel te herkennen, en handmatig zoeken als alternatief</li>
+              <li data-i18n="projects.pbn.built.2">Een overzicht van eerdere registraties met hun status</li>
+              <li data-i18n="projects.pbn.built.3">Een productdatabase met standaardverpakking en foto</li>
+              <li data-i18n="projects.pbn.built.4">Een adminpanel voor producten, gebruikers en rollen, met JWT-authenticatie in de backend</li>
             </ul>
           </div>
           <div class="modal__role">
-            <h3 class="modal__subhead">Mijn rol</h3>
-            <p>Afstudeerstage van tien weken. Samen met één andere developer vanaf nul gebouwd: eerst ontworpen in Figma, daarna frontend en backend. De overdracht is gedocumenteerd, zodat een opvolger verder kan.</p>
+            <h3 class="modal__subhead" data-i18n="work.role">Mijn rol</h3>
+            <p data-i18n="projects.pbn.role">Afstudeerstage van tien weken. Samen met één andere developer vanaf nul gebouwd: eerst ontworpen in Figma, daarna frontend en backend. De overdracht is gedocumenteerd, zodat een opvolger verder kan.</p>
           </div>
         </div>
       </div>
@@ -414,33 +422,33 @@
 
     <dialog class="modal" id="modal-avennex" aria-labelledby="modal-avennex-title">
       <div class="modal__inner">
-        <button class="modal__close" type="button" aria-label="Sluiten" data-modal-close><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <button class="modal__close" type="button" aria-label="Sluiten" data-i18n-attr="aria-label:a11y.close" data-modal-close><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
         <div class="modal__head">
-          <p class="kicker">Teamproject · in ontwikkeling</p>
+          <p class="kicker" data-i18n="projects.avennex.kicker">Teamproject · in ontwikkeling</p>
           <h2 id="modal-avennex-title" class="modal__title">AvenNex Ember</h2>
         </div>
         <figure class="shot">
-          <img src="assets/projecten/avennex-full.webp" alt="Cloudarchitectuur van AvenNex Ember op Azure" width="2200" height="1554" loading="lazy" decoding="async">
-          <figcaption>De cloudarchitectuur in één oogopslag</figcaption>
+          <img src="assets/projecten/avennex-full.webp" alt="Cloudarchitectuur van AvenNex Ember op Azure" width="2200" height="1554" loading="lazy" decoding="async" data-i18n-attr="alt:projects.avennex.alt.architecture">
+          <figcaption data-i18n="projects.avennex.captions.0">De cloudarchitectuur in één oogopslag</figcaption>
         </figure>
         <figure class="shot shot--wide">
-          <img src="assets/projecten/avennex-c4.webp" alt="C4-containerdiagram van de DEV-omgeving van Ember in Azure" width="2600" height="1337" loading="lazy" decoding="async">
-          <figcaption>C4-containerdiagram, inclusief het beheer met Terraform</figcaption>
+          <img src="assets/projecten/avennex-c4.webp" alt="C4-containerdiagram van de DEV-omgeving van Ember in Azure" width="2600" height="1337" loading="lazy" decoding="async" data-i18n-attr="alt:projects.avennex.alt.c4">
+          <figcaption data-i18n="projects.avennex.captions.1">C4-containerdiagram, inclusief het beheer met Terraform</figcaption>
         </figure>
         <div class="modal__details">
           <div class="modal__built">
-            <h3 class="modal__subhead">Wat ik heb gebouwd</h3>
+            <h3 class="modal__subhead" data-i18n="work.built">Wat ik heb gebouwd</h3>
             <ul class="modal__list">
-              <li>Een sensor (ESP32) stuurt metingen via MQTT/TLS naar Azure IoT Hub</li>
-              <li>Een Function App verwerkt elke minuut de nieuwe metingen en slaat ze op in PostgreSQL</li>
-              <li>Een Read-API levert de data aan de app van de rijder</li>
-              <li>Geheimen staan in Key Vault, met een managed identity voor de Function App; logs en metingen in Application Insights</li>
-              <li>De infrastructuur staat in Terraform, met een GitLab-pipeline die elke wijziging formatteert, valideert en scant</li>
+              <li data-i18n="projects.avennex.built.0">Een sensor (ESP32) stuurt metingen via MQTT/TLS naar Azure IoT Hub</li>
+              <li data-i18n="projects.avennex.built.1">Een Function App verwerkt elke minuut de nieuwe metingen en slaat ze op in PostgreSQL</li>
+              <li data-i18n="projects.avennex.built.2">Een Read-API levert de data aan de app van de rijder</li>
+              <li data-i18n="projects.avennex.built.3">Geheimen staan in Key Vault, met een managed identity voor de Function App; logs en metingen in Application Insights</li>
+              <li data-i18n="projects.avennex.built.4">De infrastructuur staat in Terraform, met een GitLab-pipeline die elke wijziging formatteert, valideert en scant</li>
             </ul>
           </div>
           <div class="modal__role">
-            <h3 class="modal__subhead">Mijn rol</h3>
-            <p>Cloud engineer in het team. Ik beheer de Azure-omgeving als code: terraform plan bij elke wijziging, en uitrol pas na akkoord van de opdrachtgever.</p>
+            <h3 class="modal__subhead" data-i18n="work.role">Mijn rol</h3>
+            <p data-i18n="projects.avennex.role">Cloud engineer in het team. Ik beheer de Azure-omgeving als code: terraform plan bij elke wijziging, en uitrol pas na akkoord van de opdrachtgever.</p>
           </div>
         </div>
       </div>
@@ -449,16 +457,16 @@
     <footer id="contact" class="site-footer on-dark">
       <div class="container">
         <div class="site-footer__main">
-          <h2 class="site-footer__title" data-reveal>Zullen we <span class="accent">kennismaken?</span></h2>
+          <h2 class="site-footer__title" data-reveal data-i18n-html="footer.title">Zullen we <span class="accent">kennismaken?</span></h2>
           <ul class="site-footer__links" data-reveal>
-            <li><a class="btn btn--light" href="mailto:ilias.merbout2004@gmail.com">E-mail</a></li>
+            <li><a class="btn btn--light" href="mailto:ilias.merbout2004@gmail.com" data-i18n="footer.email">E-mail</a></li>
             <li><a class="btn btn--outline-dark" href="https://www.linkedin.com/in/ilias-merbout">LinkedIn</a></li>
             <li><a class="btn btn--outline-dark" href="https://github.com/ilias020">GitHub</a></li>
           </ul>
         </div>
         <div class="site-footer__meta">
           <p>© 2026 Ilias Merbout</p>
-          <p><a href="https://github.com/ilias020/ilias020.github.io">Broncode op GitHub</a></p>
+          <p><a href="https://github.com/ilias020/ilias020.github.io" data-i18n="footer.source">Broncode op GitHub</a></p>
         </div>
       </div>
     </footer>

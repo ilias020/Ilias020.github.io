@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "title": "Ilias Merbout · Full-stack developer",
+    "description": "Full-stack developer from Amsterdam. Backends with Node.js, Express and FastAPI, frontends with React, Next.js and Angular, with an interest in AI and cloud."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "mainNav": "Main navigation",
+    "language": "Language",
+    "projects": "Projects",
+    "stack": "Technologies used",
+    "close": "Close",
+    "travel": "Travel"
+  },
+  "nav": {
+    "work": "Work",
+    "life": "Beyond work",
+    "contact": "Contact",
+    "cv": "CV",
+    "cvHref": "assets/cv/cv-ilias-merbout-en.pdf"
+  },
+  "hero": {
+    "tags": {
+      "fullstack": "Full-stack",
+      "backend": "Backend",
+      "ai": "AI",
+      "data": "Data"
+    },
+    "title": "I build software from <span class=\"accent\">database</span> to <span class=\"accent\">interface.</span>",
+    "intro": "Full-stack developer from Amsterdam with an Associate Degree in Software Development. Backends with Node.js, Express and FastAPI, frontends with React, Next.js and Angular. I am most interested in AI and cloud.",
+    "ctaWork": "See my work",
+    "ctaContact": "Get in touch"
+  },
+  "work": {
+    "kicker": "Selected work",
+    "title": "Projects I am <span class=\"accent\">proud</span> of",
+    "github": "View on GitHub",
+    "details": "View larger, with more details",
+    "private": "Private repository",
+    "soon": "Coming soon",
+    "more": "See more projects on GitHub",
+    "built": "What I built",
+    "role": "My role"
+  },
+  "projects": {
+    "nimbus": {
+      "subtitle": "AI customer service as SaaS",
+      "kicker": "Personal project · SaaS · AI",
+      "text": "SaaS platform that lets companies deploy an AI chatbot to answer customer questions. From documentation and design to implementation and tests.",
+      "alt": {
+        "laptop": "Nimbus dashboard",
+        "phone": "Mobile view of the Nimbus dashboard",
+        "full": "Full Nimbus dashboard"
+      },
+      "captions": [
+        "Desktop dashboard, designed in Figma and built to match it exactly",
+        "The same dashboard on mobile"
+      ],
+      "built": [
+        "Product vision, requirements, roadmap and complete project documentation: architecture, API design, database design and security",
+        "A custom design system and every screen in Figma, for desktop, tablet and mobile",
+        "A backend with FastAPI and PostgreSQL (with pgvector), with database migrations in Alembic",
+        "An AI chatbot that answers questions from a company's knowledge base, using the Claude API",
+        "Tests at three levels (unit, integration and end-to-end) with Pytest and Vitest, and CI/CD with GitHub Actions"
+      ],
+      "role": "Everything, from idea and design to code and tests. A personal project to show that I can design, document and build a complete SaaS product."
+    },
+    "pipeline": {
+      "subtitle": "Local RAG with OCR",
+      "kicker": "Proof of concept · RAG · OCR",
+      "text": "Local RAG pipeline that reads scanned inspection reports with OCR, summarizes them and makes them searchable, with source references. Built for Your Data Company.",
+      "alt": {
+        "summary": "Summary of an elevator inspection report with the eight steps of the pipeline",
+        "questions": "Question about a report with an answer and page source",
+        "ocr": "Text extracted with OCR from a scanned report",
+        "overview": "Overview of processed inspection reports"
+      },
+      "captions": [
+        "The eight steps of the pipeline on the left, the summary with findings, actions and source numbers on the right",
+        "A question about the report, answered with a reference to the page",
+        "A scanned report: the text was extracted from the image with OCR",
+        "The overview of processed reports, two of which were scanned and read with OCR"
+      ],
+      "built": [
+        "A pipeline in eight steps: validation, text extraction with OCR, chunking, embeddings, storage, retrieval, summarization and source validation",
+        "OCR with Tesseract (Dutch and English) for scanned reports",
+        "Summaries and answers with Gemma 3, running locally through Ollama, with no API key or usage costs",
+        "Asking questions about a report, with a page source for every answer",
+        "Tested with pytest, Ruff and mypy in the backend and ESLint and TypeScript in the frontend"
+      ],
+      "role": "Assignment for a job shadowing day at Your Data Company: build a working proof of concept within a single day, from design to tested code."
+    },
+    "pbn": {
+      "cardTitle": "PBN Inventory",
+      "title": "PBN Inventory Management",
+      "subtitle": "Graduation internship · mobile",
+      "kicker": "Graduation internship · mobile",
+      "text": "Mobile app that lets employees report stock per location, with a QR scanner, product database, status overview and admin panel. Built from scratch by a team of two.",
+      "alt": {
+        "home": "Home screen of the PBN inventory app"
+      },
+      "captions": [
+        "Home screen of the app"
+      ],
+      "built": [
+        "Reporting stock per location and project, with quantities per product",
+        "A QR scanner to recognize products quickly, with manual search as an alternative",
+        "An overview of previous submissions and their status",
+        "A product database with standard packaging and a photo",
+        "An admin panel for products, users and roles, with JWT authentication in the backend"
+      ],
+      "role": "Ten-week graduation internship. Built from scratch together with one other developer: designed in Figma first, then frontend and backend. The handover is documented, so a successor can pick it up."
+    },
+    "avennex": {
+      "subtitle": "Cloud · in development",
+      "kicker": "Team project · in development",
+      "text": "Cloud platform on Azure that processes battery sensor data to detect fire risk early. As cloud engineer, I manage the infrastructure as code with Terraform.",
+      "alt": {
+        "architecture": "Cloud architecture of AvenNex Ember on Azure",
+        "c4": "C4 container diagram of the Ember DEV environment in Azure"
+      },
+      "captions": [
+        "The cloud architecture at a glance",
+        "C4 container diagram, including management with Terraform"
+      ],
+      "built": [
+        "A sensor (ESP32) sends measurements over MQTT/TLS to Azure IoT Hub",
+        "A Function App processes new measurements every minute and stores them in PostgreSQL",
+        "A Read API serves the data to the rider's app",
+        "Secrets are kept in Key Vault, with a managed identity for the Function App; logs and metrics go to Application Insights",
+        "The infrastructure is defined in Terraform, with a GitLab pipeline that formats, validates and scans every change"
+      ],
+      "role": "Cloud engineer in the team. I manage the Azure environment as code: terraform plan on every change, and deployment only after the client approves."
+    }
+  },
+  "about": {
+    "kicker": "About me",
+    "title": "Who I am, <span class=\"accent\">beyond the code</span>",
+    "portraitAlt": "Portrait of Ilias Merbout",
+    "badgeTitle": "Football",
+    "badgeText": "from the youngest team until I was 16",
+    "paragraphs": [
+      "I'm Ilias, I live in Amsterdam and I most enjoy working on software that people actually use. What I do at work really started on the football pitch.",
+      "At four, I first stepped onto the pitch with the youngest players at AVV Zeeburgia, and I kept playing until I was sixteen. What I learned there, I now see in every team: you win together, you speak up when something isn't right, and you show up even when it rains.",
+      "These days I train at the gym three to four times a week on a PPL split: push, pull and legs. Now and then I play padel with a friend, sometimes with four of us, just for fun. I like to read, from Harry Potter to the news, and in my spare time I experiment with local LLMs."
+    ]
+  },
+  "hobbies": {
+    "football": {
+      "title": "Football",
+      "text": "At AVV Zeeburgia, from age 4 to 16"
+    },
+    "fitness": {
+      "title": "Fitness",
+      "text": "Strength training, 3 to 4 times a week"
+    },
+    "padel": {
+      "title": "Padel",
+      "text": "With friends, just for fun"
+    },
+    "reading": {
+      "title": "Reading",
+      "text": "Harry Potter and the news"
+    }
+  },
+  "footer": {
+    "title": "Shall we <span class=\"accent\">meet?</span>",
+    "email": "Email",
+    "source": "Source code on GitHub"
+  }
+}

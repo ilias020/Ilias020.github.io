@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "title": "Ilias Merbout · Full-stack developer",
+    "description": "Full-stack developer uit Amsterdam. Backends met Node.js, Express en FastAPI, frontends met React, Next.js en Angular, met interesse in AI en cloud."
+  },
+  "a11y": {
+    "skip": "Naar de inhoud",
+    "mainNav": "Hoofdnavigatie",
+    "language": "Taal",
+    "projects": "Projecten",
+    "stack": "Gebruikte technieken",
+    "close": "Sluiten",
+    "travel": "Reizen"
+  },
+  "nav": {
+    "work": "Werk",
+    "life": "Buiten werk",
+    "contact": "Contact",
+    "cv": "Cv",
+    "cvHref": "assets/cv/cv-ilias-merbout-nl.pdf"
+  },
+  "hero": {
+    "tags": {
+      "fullstack": "Full-stack",
+      "backend": "Backend",
+      "ai": "AI",
+      "data": "Data"
+    },
+    "title": "Ik bouw software van <span class=\"accent\">database</span> tot <span class=\"accent\">interface.</span>",
+    "intro": "Full-stack developer uit Amsterdam met een afgeronde HBO AD Software Development. Backends met Node.js, Express en FastAPI, frontends met React, Next.js en Angular. Mijn interesse ligt bij AI en cloud.",
+    "ctaWork": "Bekijk mijn werk",
+    "ctaContact": "Neem contact op"
+  },
+  "work": {
+    "kicker": "Uitgelicht werk",
+    "title": "Projecten waar ik <span class=\"accent\">trots</span> op ben",
+    "github": "Bekijk op GitHub",
+    "details": "Bekijk groot en meer details",
+    "private": "Privérepository",
+    "soon": "Volgt binnenkort",
+    "more": "Bekijk meer projecten op GitHub",
+    "built": "Wat ik heb gebouwd",
+    "role": "Mijn rol"
+  },
+  "projects": {
+    "nimbus": {
+      "subtitle": "AI-klantenservice als SaaS",
+      "kicker": "Persoonlijk project · SaaS · AI",
+      "text": "SaaS-platform waarmee bedrijven een AI-chatbot inzetten die klantvragen beantwoordt. Van documentatie en ontwerp tot implementatie en tests.",
+      "alt": {
+        "laptop": "Dashboard van Nimbus",
+        "phone": "Mobiele weergave van het Nimbus-dashboard",
+        "full": "Volledig dashboard van Nimbus"
+      },
+      "captions": [
+        "Dashboard op desktop, ontworpen in Figma en één op één gebouwd",
+        "Hetzelfde dashboard op mobiel"
+      ],
+      "built": [
+        "Productvisie, requirements, roadmap en een complete projectdocumentatie: architectuur, API-ontwerp, databaseontwerp en security",
+        "Een eigen design system en alle schermen in Figma, voor desktop, tablet en mobiel",
+        "Een backend met FastAPI en PostgreSQL (met pgvector), databasemigraties met Alembic",
+        "Een AI-chatbot die vragen beantwoordt op basis van de kennisbank van een bedrijf, met de Claude API",
+        "Tests op drie niveaus (unit, integratie en end-to-end) met Pytest en Vitest, en CI/CD via GitHub Actions"
+      ],
+      "role": "Alles: van idee en ontwerp tot code en tests. Een persoonlijk project om te laten zien dat ik een volledig SaaS-product kan ontwerpen, documenteren en bouwen."
+    },
+    "pipeline": {
+      "subtitle": "Lokale RAG met OCR",
+      "kicker": "Proof of concept · RAG · OCR",
+      "text": "Lokale RAG-pipeline die gescande inspectierapporten met OCR uitleest, samenvat en doorzoekbaar maakt, met bronverwijzingen. Gebouwd voor Your Data Company.",
+      "alt": {
+        "summary": "Samenvatting van een liftinspectierapport met de acht stappen van de pipeline",
+        "questions": "Vraag over een rapport met antwoord en paginabron",
+        "ocr": "Tekst die met OCR uit een gescand rapport is gehaald",
+        "overview": "Overzicht van verwerkte inspectierapporten"
+      },
+      "captions": [
+        "Links de acht stappen van de pipeline, rechts de samenvatting met bevindingen, acties en bronnummers",
+        "Een vraag over het rapport, beantwoord met een verwijzing naar de pagina",
+        "Een gescand rapport: de tekst is met OCR uit de afbeelding gehaald",
+        "Het overzicht van verwerkte rapporten, waarvan twee gescand en via OCR uitgelezen"
+      ],
+      "built": [
+        "Een pipeline in acht stappen: validatie, tekstextractie met OCR, chunking, embeddings, opslag, retrieval, samenvatting en bronvalidatie",
+        "OCR met Tesseract (Nederlands en Engels) voor gescande rapporten",
+        "Samenvattingen en antwoorden met Gemma 3, lokaal via Ollama, zonder API-sleutel of gebruikskosten",
+        "Vragen stellen over een rapport, met een paginabron bij elk antwoord",
+        "Getest met pytest, Ruff en mypy in de backend en ESLint en TypeScript in de frontend"
+      ],
+      "role": "Opdracht voor een meeloopdag bij Your Data Company: binnen een dag een werkend proof of concept bouwen, van ontwerp tot geteste code."
+    },
+    "pbn": {
+      "cardTitle": "PBN Voorraad",
+      "title": "PBN Voorraadbeheer",
+      "subtitle": "Afstudeerstage · mobiel",
+      "kicker": "Afstudeerstage · mobiel",
+      "text": "Mobiele app waarmee medewerkers per locatie voorraad doorgeven, met QR-scanner, productdatabase, statusoverzicht en adminpanel. Met z'n tweeën vanaf nul gebouwd.",
+      "alt": {
+        "home": "Startscherm van de PBN-voorraadapp"
+      },
+      "captions": [
+        "Startscherm van de app"
+      ],
+      "built": [
+        "Voorraad doorgeven per locatie en project, met aantallen per product",
+        "Een QR-scanner om producten snel te herkennen, en handmatig zoeken als alternatief",
+        "Een overzicht van eerdere registraties met hun status",
+        "Een productdatabase met standaardverpakking en foto",
+        "Een adminpanel voor producten, gebruikers en rollen, met JWT-authenticatie in de backend"
+      ],
+      "role": "Afstudeerstage van tien weken. Samen met één andere developer vanaf nul gebouwd: eerst ontworpen in Figma, daarna frontend en backend. De overdracht is gedocumenteerd, zodat een opvolger verder kan."
+    },
+    "avennex": {
+      "subtitle": "Cloud · in ontwikkeling",
+      "kicker": "Teamproject · in ontwikkeling",
+      "text": "Cloudplatform op Azure dat sensordata van batterijen verwerkt om brandrisico vroeg te signaleren. Als cloud engineer beheer ik de infrastructuur als code met Terraform.",
+      "alt": {
+        "architecture": "Cloudarchitectuur van AvenNex Ember op Azure",
+        "c4": "C4-containerdiagram van de DEV-omgeving van Ember in Azure"
+      },
+      "captions": [
+        "De cloudarchitectuur in één oogopslag",
+        "C4-containerdiagram, inclusief het beheer met Terraform"
+      ],
+      "built": [
+        "Een sensor (ESP32) stuurt metingen via MQTT/TLS naar Azure IoT Hub",
+        "Een Function App verwerkt elke minuut de nieuwe metingen en slaat ze op in PostgreSQL",
+        "Een Read-API levert de data aan de app van de rijder",
+        "Geheimen staan in Key Vault, met een managed identity voor de Function App; logs en metingen in Application Insights",
+        "De infrastructuur staat in Terraform, met een GitLab-pipeline die elke wijziging formatteert, valideert en scant"
+      ],
+      "role": "Cloud engineer in het team. Ik beheer de Azure-omgeving als code: terraform plan bij elke wijziging, en uitrol pas na akkoord van de opdrachtgever."
+    }
+  },
+  "about": {
+    "kicker": "Over mij",
+    "title": "Wie ik ben, <span class=\"accent\">buiten de code</span>",
+    "portraitAlt": "Portret van Ilias Merbout",
+    "badgeTitle": "Voetbal",
+    "badgeText": "van de mini's tot mijn 16e",
+    "paragraphs": [
+      "Ik ben Ilias, ik woon in Amsterdam en ik werk het liefst aan software die echt gebruikt wordt. Wat ik op het werk doe, begon eigenlijk op het voetbalveld.",
+      "Op mijn vierde stond ik voor het eerst bij de mini's van AVV Zeeburgia op het veld, en ik bleef voetballen tot mijn zestiende. Wat ik daar leerde, zie ik nu in elk team terug: je wint samen, je zegt het als iets niet goed gaat en je komt ook opdagen als het regent.",
+      "Tegenwoordig train ik drie à vier keer per week in de sportschool, met een PPL-schema: push, pull en legs. Af en toe speel ik padel met een vriend, soms met z'n vieren, puur voor de lol. Ik lees graag, van Harry Potter tot het nieuws, en in mijn vrije tijd experimenteer ik met lokale LLM's."
+    ]
+  },
+  "hobbies": {
+    "football": {
+      "title": "Voetbal",
+      "text": "Bij AVV Zeeburgia, van 4 tot 16 jaar"
+    },
+    "fitness": {
+      "title": "Fitness",
+      "text": "Krachttraining, 3 à 4 keer per week"
+    },
+    "padel": {
+      "title": "Padel",
+      "text": "Met vrienden, puur voor de lol"
+    },
+    "reading": {
+      "title": "Lezen",
+      "text": "Harry Potter en het nieuws"
+    }
+  },
+  "footer": {
+    "title": "Zullen we <span class=\"accent\">kennismaken?</span>",
+    "email": "E-mail",
+    "source": "Broncode op GitHub"
+  }
+}
