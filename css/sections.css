@@ -299,9 +299,37 @@
 }
 
 .project-tabs {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: var(--space-4);
+}
+
+@media (max-width: 47.99rem) {
+  .project-tabs {
+    display: flex;
+    gap: var(--space-3);
+    margin-inline: calc(-1 * var(--gutter));
+    padding: var(--space-1) var(--gutter) var(--space-2);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+
+  .project-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-tabs .project-card {
+    flex: 0 0 min(80%, 18rem);
+    scroll-snap-align: start;
+  }
+
+  .project-detail {
+    margin-top: var(--space-3);
+  }
 }
 
 .project-detail {

@@ -3,6 +3,17 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 function initTabs(tablist) {
   const tabs = [...tablist.querySelectorAll('[role="tab"]')];
 
+  const scrollBehavior = () => (reducedMotion.matches ? "auto" : "smooth");
+
+  const bringIntoRow = (tab) => {
+    if (tablist.scrollWidth <= tablist.clientWidth) return;
+    const padding = parseFloat(getComputedStyle(tablist).scrollPaddingInlineStart) || 0;
+    const start = tab.offsetLeft - padding;
+    const end = tab.offsetLeft + tab.offsetWidth + padding - tablist.clientWidth;
+    if (tablist.scrollLeft > start) tablist.scrollTo({ left: start, behavior: scrollBehavior() });
+    else if (tablist.scrollLeft < end) tablist.scrollTo({ left: end, behavior: scrollBehavior() });
+  };
+
   const select = (tab, { focus = false } = {}) => {
     for (const other of tabs) {
       const isActive = other === tab;
@@ -10,14 +21,15 @@ function initTabs(tablist) {
       other.tabIndex = isActive ? 0 : -1;
       document.getElementById(other.getAttribute("aria-controls")).hidden = !isActive;
     }
-    if (focus) tab.focus();
+    if (focus) tab.focus({ preventScroll: true });
+    bringIntoRow(tab);
   };
 
   const revealPanel = (tab) => {
     const panel = document.getElementById(tab.getAttribute("aria-controls"));
     const { top, bottom } = panel.getBoundingClientRect();
     if (top < 0 || bottom > window.innerHeight) {
-      panel.scrollIntoView({ block: "nearest", behavior: reducedMotion.matches ? "auto" : "smooth" });
+      panel.scrollIntoView({ block: "nearest", behavior: scrollBehavior() });
     }
   };
 

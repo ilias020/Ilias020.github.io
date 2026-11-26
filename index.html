@@ -12,24 +12,25 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/motion.css">
     <script type="module" src="js/main.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Naar de inhoud</a>
 
-    <header class="site-header">
+    <header class="site-header" data-site-header>
       <div class="container site-header__inner">
         <a class="brand" href="#top">
           <img class="brand__avatar" src="assets/portret/avatar.webp" alt="" width="44" height="44">
           <span class="brand__name">Ilias Merbout<span class="brand__dot">.</span></span>
         </a>
 
-        <nav class="site-nav" aria-label="Hoofdnavigatie">
-          <div class="segmented">
+        <nav class="site-nav" aria-label="Hoofdnavigatie" data-site-nav>
+          <div class="segmented" data-active="none">
             <span class="segmented__indicator" aria-hidden="true"></span>
             <ul class="segmented__items">
-              <li><a class="segmented__item" href="#werk" aria-current="true">Werk</a></li>
-              <li><a class="segmented__item" href="#over-mij">Buiten werk</a></li>
+              <li><a class="segmented__item" href="#werk">Werk</a></li>
+              <li><a class="segmented__item" href="#over-mij" data-nav-also="#reizen">Buiten werk</a></li>
               <li><a class="segmented__item" href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -84,13 +85,13 @@
 
       <section id="werk" class="work" aria-labelledby="work-title">
         <div class="container">
-          <div class="section-head section-head--center">
+          <div class="section-head section-head--center" data-reveal>
             <p class="kicker">Uitgelicht werk</p>
             <h2 id="work-title" class="section-head__title">Projecten waar ik <span class="accent">trots</span> op ben</h2>
           </div>
 
           <div class="project-tabs" role="tablist" aria-label="Projecten" data-project-tabs>
-            <button class="project-card" type="button" role="tab" id="tab-nimbus" aria-selected="true" aria-controls="panel-nimbus">
+            <button class="project-card" data-reveal type="button" role="tab" id="tab-nimbus" aria-selected="true" aria-controls="panel-nimbus">
               <span class="project-card__stage">
                 <span class="device laptop">
                   <span class="laptop__screen"><img src="assets/projecten/nimbus-laptop.webp" alt="" width="1800" height="1125" loading="lazy" decoding="async"></span>
@@ -106,7 +107,7 @@
               </span>
             </button>
 
-            <button class="project-card" type="button" role="tab" id="tab-pipeline" aria-selected="false" aria-controls="panel-pipeline" tabindex="-1">
+            <button class="project-card" data-reveal type="button" role="tab" id="tab-pipeline" aria-selected="false" aria-controls="panel-pipeline" tabindex="-1">
               <span class="project-card__stage">
                 <span class="device laptop">
                   <span class="laptop__screen"><img src="assets/projecten/pipeline-laptop.webp" alt="" width="1580" height="988" loading="lazy" decoding="async"></span>
@@ -122,7 +123,7 @@
               </span>
             </button>
 
-            <button class="project-card" type="button" role="tab" id="tab-pbn" aria-selected="false" aria-controls="panel-pbn" tabindex="-1">
+            <button class="project-card" data-reveal type="button" role="tab" id="tab-pbn" aria-selected="false" aria-controls="panel-pbn" tabindex="-1">
               <span class="project-card__stage">
                 <span class="device phone">
                   <img src="assets/projecten/pbn.webp" alt="" width="368" height="800" loading="lazy" decoding="async">
@@ -137,7 +138,7 @@
               </span>
             </button>
 
-            <button class="project-card" type="button" role="tab" id="tab-avennex" aria-selected="false" aria-controls="panel-avennex" tabindex="-1">
+            <button class="project-card" data-reveal type="button" role="tab" id="tab-avennex" aria-selected="false" aria-controls="panel-avennex" tabindex="-1">
               <span class="project-card__stage">
                 <span class="device laptop">
                   <span class="laptop__screen laptop__screen--center"><img src="assets/projecten/avennex.webp" alt="" width="1600" height="1000" loading="lazy" decoding="async"></span>
@@ -154,7 +155,7 @@
             </button>
           </div>
 
-          <div class="project-detail on-dark">
+          <div class="project-detail on-dark" data-reveal>
             <div class="project-panel" role="tabpanel" id="panel-nimbus" aria-labelledby="tab-nimbus">
               <div class="project-panel__media">
                 <div class="device-group">
@@ -196,7 +197,7 @@
                   <li>Python</li><li>FastAPI</li><li>Pydantic</li><li>React</li><li>Vite</li><li>SQLite</li><li>Tesseract</li><li>Ollama</li><li>Gemma 3</li><li>ChromaDB</li>
                 </ul>
                 <div class="project-panel__actions">
-                  <a class="btn btn--light" href="https://github.com/ilias020/Document-processing-pipeline">Bekijk op GitHub <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                  <p class="project-panel__status">Privérepository</p>
                   <button class="text-button" type="button" aria-haspopup="dialog" aria-controls="modal-pipeline" data-modal-open>Bekijk groot en meer details <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
                 </div>
               </div>
@@ -244,7 +245,7 @@
             </div>
           </div>
 
-          <div class="work__more">
+          <div class="work__more" data-reveal>
             <a class="btn btn--outline" href="https://github.com/ilias020?tab=repositories">Bekijk meer projecten op GitHub <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </div>
         </div>
@@ -253,14 +254,14 @@
       <section id="over-mij" class="about" aria-labelledby="about-title">
         <div class="container">
           <div class="about__intro">
-            <figure class="about__portrait">
+            <figure class="about__portrait" data-reveal>
               <img src="assets/portret/portret-over-mij.webp" alt="Portret van Ilias Merbout" width="960" height="1200" loading="lazy" decoding="async">
               <figcaption class="about__badge">
                 <span class="about__badge-title">Voetbal</span>
                 <span class="about__badge-text">van de mini's tot mijn 16e</span>
               </figcaption>
             </figure>
-            <div class="about__body">
+            <div class="about__body" data-reveal>
               <p class="kicker">Over mij</p>
               <h2 id="about-title" class="section-head__title">Wie ik ben, <span class="accent">buiten de code</span></h2>
               <p>Ik ben Ilias, ik woon in Amsterdam en ik werk het liefst aan software die echt gebruikt wordt. Wat ik op het werk doe, begon eigenlijk op het voetbalveld.</p>
@@ -270,28 +271,28 @@
           </div>
 
           <ul class="hobbies" role="list">
-            <li class="hobby-card">
+            <li class="hobby-card" data-reveal>
               <div class="hobby-card__media">
                 <svg class="hobby-card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7.5 4.3 3.1-1.6 5H9.3l-1.6-5z"/><path d="M12 7.5V3M16.3 10.6l4.3-1.4M14.7 15.6l2.6 3.7M9.3 15.6l-2.6 3.7M7.7 10.6 3.4 9.2"/></svg>
               </div>
               <h3 class="hobby-card__title">Voetbal</h3>
               <p class="hobby-card__text">Bij AVV Zeeburgia, van 4 tot 16 jaar</p>
             </li>
-            <li class="hobby-card">
+            <li class="hobby-card" data-reveal>
               <div class="hobby-card__media">
                 <svg class="hobby-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg>
               </div>
               <h3 class="hobby-card__title">Fitness</h3>
               <p class="hobby-card__text">Krachttraining, 3 à 4 keer per week</p>
             </li>
-            <li class="hobby-card">
+            <li class="hobby-card" data-reveal>
               <div class="hobby-card__media">
                 <svg class="hobby-card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="9" r="6"/><path d="m14.3 13.3 5.7 5.7"/><circle cx="19" cy="5" r="1.5"/><path d="M8 7h.01M12 7h.01M10 9.5h.01M8 12h.01M12 12h.01"/></svg>
               </div>
               <h3 class="hobby-card__title">Padel</h3>
               <p class="hobby-card__text">Met vrienden, puur voor de lol</p>
             </li>
-            <li class="hobby-card">
+            <li class="hobby-card" data-reveal>
               <div class="hobby-card__media">
                 <svg class="hobby-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5c3-1 6-1 9 1 3-2 6-2 9-1v13c-3-1-6-1-9 1-3-2-6-2-9-1z"/><path d="M12 6.5v13"/></svg>
               </div>
@@ -448,8 +449,8 @@
     <footer id="contact" class="site-footer on-dark">
       <div class="container">
         <div class="site-footer__main">
-          <h2 class="site-footer__title">Zullen we <span class="accent">kennismaken?</span></h2>
-          <ul class="site-footer__links">
+          <h2 class="site-footer__title" data-reveal>Zullen we <span class="accent">kennismaken?</span></h2>
+          <ul class="site-footer__links" data-reveal>
             <li><a class="btn btn--light" href="mailto:ilias.merbout2004@gmail.com">E-mail</a></li>
             <li><a class="btn btn--outline-dark" href="https://www.linkedin.com/in/ilias-merbout">LinkedIn</a></li>
             <li><a class="btn btn--outline-dark" href="https://github.com/ilias020">GitHub</a></li>

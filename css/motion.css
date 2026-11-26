@@ -1,0 +1,71 @@
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--color-line);
+}
+
+.site-nav .segmented__indicator {
+  transition:
+    transform var(--duration-base) var(--ease-in-out),
+    opacity var(--duration-fast) ease;
+}
+
+.site-nav .segmented[data-active="none"] .segmented__indicator {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__watermark {
+    animation: fade 1.2s ease-out both;
+  }
+
+  .hero__tags .tag,
+  .hero__title,
+  .hero__intro,
+  .hero__actions {
+    animation: rise var(--duration-slow) var(--ease-out) backwards;
+  }
+
+  .hero__tags .tag:nth-child(2) { animation-delay: 80ms; }
+  .hero__tags .tag:nth-child(3) { animation-delay: 160ms; }
+  .hero__tags .tag:nth-child(4) { animation-delay: 240ms; }
+  .hero__title { animation-delay: 200ms; }
+  .hero__intro { animation-delay: 320ms; }
+  .hero__actions { animation-delay: 420ms; }
+
+  .reveal-ready [data-reveal]:not(.is-visible) {
+    opacity: 0;
+  }
+
+  .reveal-ready [data-reveal].is-visible {
+    animation: rise var(--duration-slow) var(--ease-out) backwards;
+    animation-delay: calc(var(--reveal-index, 0) * 80ms);
+  }
+
+  .project-panel > * {
+    animation: rise 500ms var(--ease-out) backwards;
+  }
+
+  .project-panel > * + * {
+    animation-delay: 80ms;
+  }
+
+  .modal[open] .modal__inner {
+    animation: rise 400ms var(--ease-out) backwards;
+  }
+
+  .modal[open]::backdrop {
+    animation: fade 300ms ease-out;
+  }
+}
