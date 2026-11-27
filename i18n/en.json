@@ -9,8 +9,7 @@
     "language": "Language",
     "projects": "Projects",
     "stack": "Technologies used",
-    "close": "Close",
-    "travel": "Travel"
+    "close": "Close"
   },
   "nav": {
     "work": "Work",
@@ -138,10 +137,10 @@
     "title": "Who I am, <span class=\"accent\">beyond the code</span>",
     "portraitAlt": "Portrait of Ilias Merbout",
     "badgeTitle": "Football",
-    "badgeText": "from the youngest team until I was 16",
+    "badgeText": "from age 4 to 16",
     "paragraphs": [
       "I'm Ilias, I live in Amsterdam and I most enjoy working on software that people actually use. What I do at work really started on the football pitch.",
-      "At four, I first stepped onto the pitch with the youngest players at AVV Zeeburgia, and I kept playing until I was sixteen. What I learned there, I now see in every team: you win together, you speak up when something isn't right, and you show up even when it rains.",
+      "When I was four, I first stepped onto the pitch at AVV Zeeburgia, and I kept playing until I was sixteen. What I learned there, I now see in every team: you win together, you speak up when something isn't right, and you show up even when it rains.",
       "These days I train at the gym three to four times a week on a PPL split: push, pull and legs. Now and then I play padel with a friend, sometimes with four of us, just for fun. I like to read, from Harry Potter to the news, and in my spare time I experiment with local LLMs."
     ]
   },
@@ -161,6 +160,113 @@
     "reading": {
       "title": "Reading",
       "text": "Harry Potter and the news"
+    }
+  },
+  "travel": {
+    "kicker": "Travel",
+    "title": "Where I have been,<br><span class=\"accent\">and where I am going</span>",
+    "intro": "Every pin is a trip. Click a place to see the photos, and keep an eye on London.",
+    "home": "Home",
+    "soon": "Coming soon",
+    "back": "All countries",
+    "map": "Map of my travels",
+    "countries": "Countries",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "photo": "Photo {n} of {total}",
+    "photos": "Photos",
+    "places": {
+      "amsterdam": {
+        "name": "Amsterdam",
+        "text": "My city, and the starting point of every trip on this map. Canals and bridges, but also new architecture along the IJ and on the Zuidas.",
+        "alts": [
+          "The illuminated Magere Brug over the Amstel at night",
+          "Science Center NEMO on the IJ",
+          "The Sluishuis residential building on the IJ",
+          "The Valley building on the Zuidas",
+          "Rembrandtplein with the statue of Rembrandt"
+        ]
+      },
+      "london": {
+        "name": "London",
+        "text": "The next destination. The photos will appear here after the trip.",
+        "alts": []
+      },
+      "marokko": {
+        "name": "Morocco",
+        "text": "Jemaa el-Fnaa at sunset, the streets and murals of Marrakech, Tetouan in the north and Ouarzazate, the film city on the edge of the desert.",
+        "alts": [
+          "The Koutoubia Mosque at sunset, seen from Jemaa el-Fnaa",
+          "Large mural in Marrakech",
+          "View over the rooftops of Tetouan",
+          "Illuminated royal coat of arms on a building in Tetouan",
+          "Monument of a film clapperboard in Ouarzazate"
+        ]
+      },
+      "spanje": {
+        "name": "Spain",
+        "text": "Sun, palm trees and the beach on the Costa del Sol.",
+        "alts": [
+          "Palm trees near Manilva",
+          "Beach near Manilva",
+          "Swimming pool with palm trees and a view of the mountains"
+        ]
+      },
+      "turkije": {
+        "name": "Turkey",
+        "text": "Clear water and long beaches on the Turkish Riviera.",
+        "alts": [
+          "Sea and beach at Konaklı",
+          "Jetty by the sea in Konaklı",
+          "Path to the beach between palm trees",
+          "Bridge over a swimming pool between palm trees",
+          "Swimming pool with sun loungers in Konaklı"
+        ]
+      },
+      "grancanaria": {
+        "name": "Gran Canaria",
+        "text": "Sand dunes that run down to the sea, and palm trees in the evening light.",
+        "alts": [
+          "The sand dunes of Maspalomas",
+          "Illuminated path between palm trees",
+          "Boat trip along the coast of Gran Canaria",
+          "Terrace with palm trees by the sea",
+          "Footpath between palm trees"
+        ]
+      },
+      "duitsland": {
+        "name": "Germany",
+        "text": "Modern architecture in Düsseldorf and the banks of the Rhine in Cologne.",
+        "alts": [
+          "Fountain with glass pyramids in Düsseldorf",
+          "Green facade of the Kö-Bogen in Düsseldorf",
+          "Alaaf letters on the Rhine in Cologne",
+          "The fountain with glass pyramids from another side",
+          "Modern buildings and a lawn in Düsseldorf"
+        ]
+      },
+      "italie": {
+        "name": "Italy",
+        "text": "Gondolas in narrow canals and the canals of Trieste.",
+        "alts": [
+          "Gondola in a narrow canal in Venice",
+          "The Grand Canal in Venice",
+          "Square with the domed church of San Simeone Piccolo in Venice",
+          "The Canal Grande of Trieste",
+          "View over Trieste towards the sea"
+        ]
+      },
+      "kroatie": {
+        "name": "Croatia",
+        "text": "Waterfalls in Plitvice, old towns by the sea and sunsets in Zadar.",
+        "alts": [
+          "Waterfalls and turquoise water in Plitvice",
+          "View over the lakes of Plitvice",
+          "The old town of Rovinj from the water",
+          "Sunset over the sea near Zadar",
+          "The bell tower of Split"
+        ]
+      }
     }
   },
   "footer": {

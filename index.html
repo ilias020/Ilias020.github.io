@@ -311,7 +311,44 @@
         </div>
       </section>
 
-      <section id="reizen" class="travel" aria-label="Reizen" data-i18n-attr="aria-label:a11y.travel"></section>
+      <section id="reizen" class="travel" aria-labelledby="travel-title" data-travel>
+        <div class="container">
+          <div class="travel__head" data-reveal>
+            <div class="travel__heading">
+              <p class="kicker" data-i18n="travel.kicker">Reizen</p>
+              <h2 id="travel-title" class="section-head__title" data-i18n-html="travel.title">Waar ik ben geweest,<br><span class="accent">en waar ik heen ga</span></h2>
+            </div>
+            <p class="travel__intro" data-i18n="travel.intro">Elke pin is een reis. Klik op een plek voor de foto's, en houd Londen in de gaten.</p>
+          </div>
+
+          <div class="travel__layout" data-reveal>
+            <div class="travel__map" data-travel-map>
+              <div class="travel__canvas" role="region" aria-label="Kaart met mijn reizen" data-i18n-attr="aria-label:travel.map" data-travel-canvas></div>
+              <button class="travel__back" type="button" hidden data-travel-back><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> <span data-i18n="travel.back">Alle landen</span></button>
+              <ul class="travel__list" role="list" aria-label="Landen" hidden data-i18n-attr="aria-label:travel.countries" data-travel-list></ul>
+            </div>
+
+            <article class="travel-card">
+              <div class="travel-card__head" aria-live="polite">
+                <p class="kicker" data-travel-tag></p>
+                <h3 class="travel-card__title" data-travel-name></h3>
+              </div>
+              <p class="travel-card__text" data-travel-text></p>
+              <p class="travel-card__cities" data-travel-cities></p>
+              <div class="travel-card__photos">
+                <div class="carousel" role="group" aria-roledescription="carrousel" hidden data-carousel>
+                  <div class="carousel__viewport" data-carousel-viewport></div>
+                  <span class="carousel__counter" aria-hidden="true" data-carousel-counter></span>
+                  <span class="carousel__city" data-carousel-city></span>
+                  <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Vorige foto" data-i18n-attr="aria-label:travel.prev" data-carousel-prev><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+                  <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Volgende foto" data-i18n-attr="aria-label:travel.next" data-carousel-next><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+                </div>
+                <div class="carousel__dots" hidden data-carousel-dots></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
     <dialog class="modal" id="modal-nimbus" aria-labelledby="modal-nimbus-title">

@@ -5,6 +5,11 @@ const DEFAULT_LANG = "nl";
 const dictionaries = new Map();
 let currentLang = DEFAULT_LANG;
 let currentDict = null;
+let markReady;
+
+export const ready = new Promise((resolve) => {
+  markReady = resolve;
+});
 
 const readStoredLang = () => {
   try {
@@ -91,6 +96,7 @@ export async function setLang(lang, { persist = true } = {}) {
     syncSwitch(currentLang);
   } finally {
     document.documentElement.classList.remove("i18n-pending");
+    markReady();
   }
 }
 
@@ -108,7 +114,7 @@ export async function initI18n() {
     syncSwitch(DEFAULT_LANG);
     load(DEFAULT_LANG).then((dict) => {
       if (currentLang === DEFAULT_LANG) currentDict = dict;
-    }).catch(() => {});
+    }).catch(() => {}).finally(markReady);
     return;
   }
   await setLang(initial, { persist: false });

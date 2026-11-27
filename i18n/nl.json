@@ -9,8 +9,7 @@
     "language": "Taal",
     "projects": "Projecten",
     "stack": "Gebruikte technieken",
-    "close": "Sluiten",
-    "travel": "Reizen"
+    "close": "Sluiten"
   },
   "nav": {
     "work": "Werk",
@@ -161,6 +160,113 @@
     "reading": {
       "title": "Lezen",
       "text": "Harry Potter en het nieuws"
+    }
+  },
+  "travel": {
+    "kicker": "Reizen",
+    "title": "Waar ik ben geweest,<br><span class=\"accent\">en waar ik heen ga</span>",
+    "intro": "Elke pin is een reis. Klik op een plek voor de foto's, en houd Londen in de gaten.",
+    "home": "Thuis",
+    "soon": "Binnenkort",
+    "back": "Alle landen",
+    "map": "Kaart met mijn reizen",
+    "countries": "Landen",
+    "prev": "Vorige foto",
+    "next": "Volgende foto",
+    "photo": "Foto {n} van {total}",
+    "photos": "Foto's",
+    "places": {
+      "amsterdam": {
+        "name": "Amsterdam",
+        "text": "Mijn stad, en het beginpunt van elke reis op deze kaart. Grachten en bruggen, maar ook nieuwe architectuur aan het IJ en op de Zuidas.",
+        "alts": [
+          "De verlichte Magere Brug over de Amstel bij nacht",
+          "Science Center NEMO aan het IJ",
+          "Woongebouw Sluishuis aan het IJ",
+          "Het gebouw Valley op de Zuidas",
+          "Het Rembrandtplein met het standbeeld van Rembrandt"
+        ]
+      },
+      "london": {
+        "name": "Londen",
+        "text": "De volgende bestemming. Na de reis verschijnen hier de foto's.",
+        "alts": []
+      },
+      "marokko": {
+        "name": "Marokko",
+        "text": "Het Djemaa el Fna bij zonsondergang, de straten en muurkunst van Marrakech, Tetouan in het noorden en Ouarzazate, de filmstad aan de rand van de woestijn.",
+        "alts": [
+          "De Koutoubia-moskee bij zonsondergang, gezien vanaf het Djemaa el Fna",
+          "Grote muurschildering in Marrakech",
+          "Uitzicht over de daken van Tetouan",
+          "Verlicht koninklijk wapen op een gebouw in Tetouan",
+          "Monument van een filmklapper in Ouarzazate"
+        ]
+      },
+      "spanje": {
+        "name": "Spanje",
+        "text": "Zon, palmbomen en het strand aan de Costa del Sol.",
+        "alts": [
+          "Palmbomen bij Manilva",
+          "Strand bij Manilva",
+          "Zwembad met palmbomen en uitzicht op de bergen"
+        ]
+      },
+      "turkije": {
+        "name": "Turkije",
+        "text": "Helder water en lange stranden aan de Turkse Rivièra.",
+        "alts": [
+          "Zee en strand bij Konaklı",
+          "Steiger aan zee in Konaklı",
+          "Pad naar het strand tussen palmbomen",
+          "Brug over een zwembad tussen palmbomen",
+          "Zwembad met ligbedden in Konaklı"
+        ]
+      },
+      "grancanaria": {
+        "name": "Gran Canaria",
+        "text": "Zandduinen tot aan zee en palmbomen in het avondlicht.",
+        "alts": [
+          "De zandduinen van Maspalomas",
+          "Verlicht pad tussen palmbomen",
+          "Boottocht langs de kust van Gran Canaria",
+          "Terras met palmbomen aan zee",
+          "Wandelpad tussen palmbomen"
+        ]
+      },
+      "duitsland": {
+        "name": "Duitsland",
+        "text": "Moderne architectuur in Düsseldorf en de Rijnoever in Keulen.",
+        "alts": [
+          "Fontein met glazen piramides in Düsseldorf",
+          "Groene gevel van de Kö-Bogen in Düsseldorf",
+          "Alaaf-letters aan de Rijn in Keulen",
+          "De fontein met glazen piramides van een andere kant",
+          "Moderne gebouwen en een grasveld in Düsseldorf"
+        ]
+      },
+      "italie": {
+        "name": "Italië",
+        "text": "Gondels in smalle kanalen en de grachten van Triëst.",
+        "alts": [
+          "Gondel in een smal kanaal in Venetië",
+          "Het Canal Grande in Venetië",
+          "Plein met de koepelkerk San Simeone Piccolo in Venetië",
+          "Het Canal Grande van Triëst",
+          "Uitzicht over Triëst richting zee"
+        ]
+      },
+      "kroatie": {
+        "name": "Kroatië",
+        "text": "Watervallen in Plitvice, oude stadjes aan zee en zonsondergangen in Zadar.",
+        "alts": [
+          "Watervallen en turquoise water in Plitvice",
+          "Uitzicht over de meren van Plitvice",
+          "De oude stad Rovinj vanaf het water",
+          "Zonsondergang boven de zee bij Zadar",
+          "De klokkentoren van Split"
+        ]
+      }
     }
   },
   "footer": {

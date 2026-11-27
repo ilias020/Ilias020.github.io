@@ -25,6 +25,9 @@
   --color-device-screen: #f7f7f4;
   --color-phone-screen: #f1f1f1;
   --color-backdrop: rgb(21 23 26 / 0.55);
+  --color-map: #eeede8;
+  --color-pin-past: #6b6d73;
+  --color-badge-dark: rgb(21 23 26 / 0.72);
 
   --font-display: "Fraunces", "Fraunces Fallback", Georgia, serif;
   --font-body: "Hanken Grotesk", "Hanken Grotesk Fallback", Arial, system-ui, sans-serif;

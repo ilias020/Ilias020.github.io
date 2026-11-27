@@ -69,3 +69,31 @@
     animation: fade 300ms ease-out;
   }
 }
+
+@keyframes pulse {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3.2);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .map-pin--soon::before {
+    animation: pulse 1.8s ease-out infinite;
+  }
+
+  .carousel__slide {
+    transform: scale(1.04);
+    transition:
+      opacity 450ms ease,
+      transform var(--duration-slow) var(--ease-out);
+  }
+
+  .carousel__slide.is-active {
+    transform: none;
+  }
+}
