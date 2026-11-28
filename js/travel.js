@@ -1,11 +1,10 @@
 import { getLang, ready, t } from "./i18n.js";
-import { mapsConfig } from "./maps-config.js";
 import { CURRENT_YEAR, DEFAULT_PLACE, HOME, OVERVIEW, SOON, places } from "./travel-data.js";
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const SWIPE_THRESHOLD = 40;
 const MAP_PADDING = 48;
-const MAX_FOCUS_ZOOM = 11;
+const MAX_FOCUS_ZOOM = 6;
 const FLY_DURATION = 1100;
 const ROUTE_SPEED = 0.03;
 
@@ -161,7 +160,12 @@ const inverseMercatorY = (y) => ((2 * Math.atan(Math.exp(y)) - Math.PI / 2) * 18
 const lerp = (from, to, progress) => from + (to - from) * progress;
 const easeInOut = (progress) => (progress < 0.5 ? 4 * progress ** 3 : 1 - (-2 * progress + 2) ** 3 / 2);
 
-async function createMap(container, { onSelect, onCity }) {
+const loadConfig = () =>
+  import("./maps-config.js")
+    .then(({ mapsConfig }) => mapsConfig)
+    .catch(() => ({}));
+
+async function createMap(container, mapsConfig, { onSelect, onCity }) {
   await loadMapsApi(mapsConfig.apiKey);
   const [{ Map, Polyline }, { AdvancedMarkerElement }] = await Promise.all([
     google.maps.importLibrary("maps"),
@@ -227,15 +231,24 @@ async function createMap(container, { onSelect, onCity }) {
   const countryMarkers = places.map((place) => {
     const content = pinElement(pinVariant(place));
     if (place.id === SOON) content.append(soonLabel());
-    const marker = new AdvancedMarkerElement({ map, position: pinPosition(place), content, gmpClickable: true });
+    const marker = new AdvancedMarkerElement({ map, position: pinPosition(place), content, gmpClickable: true, zIndex: 1 });
     marker.addEventListener("gmp-click", () => onSelect(place.id, { zoom: true }));
     return { place, marker, content };
   });
 
+  const showCountries = (focused = null) => {
+    countryMarkers.forEach(({ place, marker, content }) => {
+      marker.map = place === focused ? null : map;
+      content.classList.toggle("is-dimmed", focused !== null);
+    });
+  };
+
   let cityMarkers = [];
   const clearCities = () => {
-    cityMarkers.forEach(({ marker }) => {
+    cityMarkers.forEach(({ marker, content }) => {
       marker.map = null;
+      const label = content.querySelector(".map-pin__label");
+      if (label) soonLabels.splice(soonLabels.indexOf(label), 1);
     });
     cityMarkers = [];
   };
@@ -252,10 +265,9 @@ async function createMap(container, { onSelect, onCity }) {
 
   let routeFrame = 0;
   let inView = false;
-  let overview = true;
   const animateRoute = () => {
     cancelAnimationFrame(routeFrame);
-    if (!inView || !overview || reducedMotion.matches) return;
+    if (!inView || reducedMotion.matches) return;
     const tick = (now) => {
       const icons = route.get("icons");
       icons[0].offset = `${(now * ROUTE_SPEED) % 10}px`;
@@ -271,30 +283,20 @@ async function createMap(container, { onSelect, onCity }) {
   reducedMotion.addEventListener("change", animateRoute);
 
   const showOverview = () => {
-    overview = true;
     clearCities();
-    countryMarkers.forEach(({ marker }) => {
-      marker.map = map;
-    });
-    route.setMap(map);
+    showCountries();
     fly(cameraFor(OVERVIEW));
-    animateRoute();
   };
 
   const focus = (place) => {
-    overview = false;
-    animateRoute();
-    route.setMap(null);
-    countryMarkers.forEach(({ marker }) => {
-      marker.map = null;
-    });
     clearCities();
+    showCountries(place);
     cityMarkers = place.cities.map((city) => {
       const content = pinElement(pinVariant(place));
       if (place.id === SOON) content.append(soonLabel());
-      const marker = new AdvancedMarkerElement({ map, position: city.position, content, title: localName(city.name), gmpClickable: true });
+      const marker = new AdvancedMarkerElement({ map, position: city.position, content, title: localName(city.name), gmpClickable: true, zIndex: 2 });
       marker.addEventListener("gmp-click", () => onCity(city.name));
-      return { city, marker };
+      return { city, marker, content };
     });
     fly(cameraFor(boundsOf(place.cities)));
   };
@@ -395,10 +397,10 @@ export function initTravel() {
     frame.classList.add("is-fallback");
   };
 
-  const startMap = async () => {
+  const startMap = async (mapsConfig) => {
     try {
       window.gm_authFailure = useFallback;
-      map = await createMap(canvas, { onSelect: select, onCity: (name) => carousel.showCity(name) });
+      map = await createMap(canvas, mapsConfig, { onSelect: select, onCity: (name) => carousel.showCity(name) });
       map.highlight(selected.id);
       frame.classList.add("is-ready");
     } catch (error) {
@@ -407,7 +409,7 @@ export function initTravel() {
     }
   };
 
-  ready.then(() => {
+  Promise.all([ready, loadConfig()]).then(([, mapsConfig]) => {
     select(selected.id);
 
     if (!mapsConfig.apiKey || !mapsConfig.mapId || !("IntersectionObserver" in window)) {
@@ -418,7 +420,7 @@ export function initTravel() {
       ([entry]) => {
         if (!entry.isIntersecting) return;
         observer.disconnect();
-        startMap();
+        startMap(mapsConfig);
       },
       { rootMargin: "600px 0px" },
     );

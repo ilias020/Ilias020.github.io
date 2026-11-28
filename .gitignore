@@ -5,3 +5,5 @@ ontwerp-richting-b.html
 node_modules/
 .DS_Store
 Thumbs.db
+
+js/maps-config.js

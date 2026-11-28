@@ -1,0 +1,54 @@
+name: Uitrollen naar GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Maps-configuratie aanmaken uit secrets
+        env:
+          MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
+          MAPS_MAP_ID: ${{ secrets.MAPS_MAP_ID }}
+        run: |
+          if [ -z "$MAPS_API_KEY" ] || [ -z "$MAPS_MAP_ID" ]; then
+            echo "::error::De secrets MAPS_API_KEY en MAPS_MAP_ID moeten allebei ingesteld zijn."
+            exit 1
+          fi
+          node -e '
+            const { MAPS_API_KEY: apiKey, MAPS_MAP_ID: mapId } = process.env;
+            const config = JSON.stringify({ apiKey, mapId }, null, 2);
+            require("node:fs").writeFileSync("js/maps-config.js", `export const mapsConfig = ${config};\n`);
+          '
+
+      - name: Site samenstellen
+        run: |
+          mkdir _site
+          cp -r index.html css js i18n assets _site/
+          rm _site/js/maps-config.example.js
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
